@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>延时掉转</title>
+</head>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<style>
+.delay{margin:10px auto 20px;}
+#btn{ border:solid 1px #ccc; background:#eee; color:#444; padding:10px;}
+</style>
+<body>
+<div class="delay"><input type="button" id="btn" value="免费获取验证码" /></div>
+<script type="text/javascript">
+var wait=10;
+function time(o) {
+        if (wait == 0) {
+            o.removeAttribute("disabled"); 
+			$(".delay").html("<a href='http://www.jq22.com' target='_blank'><input type='button' id='btn' value='进入页面' /></a>");
+            //o.value="免费获取验证码";
+            //wait = 10;
+            } 
+		else {
+            o.setAttribute("disabled", true);
+            o.value="重新发送(" + wait + ")";
+            wait--;
+            setTimeout(function() {
+                time(o)
+            },
+            1000)
+        }
+    }
+document.getElementById("btn").onclick=function(){time(this);}
+</script>
+</body>
+</html>
