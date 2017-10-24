@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery.slideJS</title>
+	<link rel="stylesheet" href="fonts/fontCss.css">
+	<link rel="stylesheet" href="css/jquery.slider.css">
+</head>
+<body style="background:#222;width: 1200px;margin:0 auto" >
+	<div class="testSlider"></div>
+	<span class="testSlider1" style="margin-top: 40px;display: inline-block;"></span>
+	<span class="testSlider3" style="margin-top: 40px;margin-left:40px;display: inline-block;"></span>
+</body>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="js/jquery.slider.js"></script>
+<script>
+	window.onload = function(){
+		$('.testSlider').slider({
+			originType:'tuoyuan'
+		});
+		$('.testSlider1').slider({
+			width:300,
+			height:300,
+			showSlider: false,
+			showOrigin: false,
+			originPosition:'center'
+		});
+
+		$('.testSlider3').slider({
+			width:852,
+			height:300,
+			originPosition:'center'
+		});
+	}
+</script>
+</html>
