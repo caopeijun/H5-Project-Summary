@@ -1,0 +1,17 @@
+$.getJSON("json/¸ßÐ£.json", function(area1) {
+
+					var a = "";
+					var b = "";
+					var c = ""
+					for(var i = 0; i <= area1.campus.length; i++) {
+						for(var key in area1.campus[i]) {
+							a = "<div class='pro'>" + key + "</div>"
+							$("#con1").append(a)
+							c = "<div class='schall'></div>"
+							$("#con2").append(c)
+							for(var j = 0; j < area1.campus[i][key].length; j++) {
+								b = "<div class = 'sch'>" + area1.campus[i][key][j] + "</div>";
+								$(".schall").eq(i).append(b)
+							}
+						}
+					}}

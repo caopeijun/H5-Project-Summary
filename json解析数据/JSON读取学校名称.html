@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				$.getJSON("json/高校.json", function(area1) {
+
+					var a = "";
+					var b = "";
+					var c = ""
+					for(var i = 0; i <= area1.campus.length; i++) {
+						for(var key in area1.campus[i]) {
+							a = "<div class='pro'>" + key + "</div>"
+							$("#con1").append(a)
+							c = "<div class='schall'></div>"
+							$("#con2").append(c)
+							for(var j = 0; j < area1.campus[i][key].length; j++) {
+								b = "<div class = 'sch'>" + area1.campus[i][key][j] + "</div>";
+								$(".schall").eq(i).append(b)
+							}
+						}
+					}
+					
+					var x ;
+					
+					$(".pro").click(function() {
+						x = $(this).index();
+						var k = $(this).index();
+						$(".schall").eq(k).find(".sch").css({
+							"width": "100%",
+							"height": "30px",
+							"border": "1px solid orange"
+						})
+						$(".schall").eq(k).siblings().find(".sch").css({
+							"width": "0px",
+							"height": "0px",
+							"border": "none"
+						})
+					})
+					
+					$(".sch").click(function(){
+						alert($(".pro").eq(x).text()+" "+$(this).text())
+					})
+				})
+			})
+		</script>
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+				margin: 0px;
+				padding: 0px;
+				transition: .3s all ease;
+			}
+			
+			#con {
+				border: 3px solid #999999;
+			}
+			
+			#con1 {
+				width: 40%;
+				border: 3px green solid;
+				float: left;
+				overflow: hidden;
+			}
+			
+			#con2 {
+				width: 60%;
+				border: 3px blue solid;
+				float: left;
+				overflow: hidden;
+			}
+			
+			.pro {
+				width: 100%;
+				height: 50px;
+				border: 1px solid red;
+				text-align: center;
+				line-height: 50px;
+			}
+			
+			.sch {
+				width: 0px;
+				height: 0px;
+				text-align: center;
+				line-height: 30px;
+				overflow: hidden;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div id="con">
+			<div id="con1"></div>
+			<div id="con2"></div>
+		</div>
+
+	</body>
+
+</html>
