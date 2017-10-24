@@ -1,0 +1,43 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+#main {
+	width: 1000px;
+	
+	margin:0 auto;
+}
+#large 
+{
+	width: 400px;
+	height: 283px;
+}
+#large img {
+	width: 400px;
+	height: 283px;
+}
+#thumbnail {
+	width: 400px;
+	height: 60px;
+	overflow: hidden;
+	margin-top:10px;
+	list-style: none;
+	border: 1px solid #E3E3E3;
+	background: #fff;
+}
+#thumbnail li {
+	float: left;
+	width: 81px;
+	margin: 0px;
+	margin-right:25px;
+}
+#thumbnail a {
+	display: block;
+	width: 81px;
+	height: 60px;
+}
+#thumbnail a:hover {
+	border: 1px #FF4200 solid;
+	
+}
