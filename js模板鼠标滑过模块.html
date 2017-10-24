@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DIV层切换</title>
+<script language="JavaScript" type="text/javascript"> 
+/*********************************************
+功能:  通用DIV切换函数
+参数:  divID --当前DIV的ID号；divName
+ --要改变的这一组DIV的命名前缀；zDivCount --这一组DIV的个数-1
+BY :  JetKing 2007.06 
+*********************************************/
+function ChangeDiv(divId,divName,zDivCount) 
+{ 
+ for(i=0;i<=zDivCount;i++)
+ {
+   document.getElementById(divName+i).style.display="none"; 
+ }
+ document.getElementById(divName+divId).style.display="block"; 
+}
+</script> 
+</head>
+<body>
+层切换示例：<br>By:JetKing(www.80Boby.Com)<br>
+<span onMouseMove="JavaScript:ChangeDiv('0','JKDiv_',2)" style="cursor:pointer;">内容一</span>
+<span onMouseMove="JavaScript:ChangeDiv('1','JKDiv_',2)" style="cursor:pointer;">内容二</span>
+<span onMouseMove="JavaScript:ChangeDiv('2','JKDiv_',2)" style="cursor:pointer;">内容三</span>
+
+
+<div id="BigDIV" style="border:solid 1px #cccccc;width:460px;margin:10px;">
+	<div id="JKDiv_0" style="font-size:14px;margin:20px;color:#FF0000;">内容部分第一区<br><img src="img/35.jpg"></div> 
+	<div id="JKDiv_1" style="display:none;font-size:14px;margin:10px;color:#FF0000;">内容部分第二区<br><img src="img/36.jpg"></div> 
+	<div id="JKDiv_2" style="display:none;font-size:14px;margin:10px;color:#FF0000;">内容部分第三区</div> 
+</div>
+</body>
+</html>

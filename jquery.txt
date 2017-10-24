@@ -1,0 +1,36 @@
+﻿$(document).ready(function(){
+  $("#as1").click(function(){
+	$("#sti_0").hide();
+});
+
+
+
+function timer1() {
+    var num = 0;
+    var timer = setInterval(function() {
+        num ++;
+        alert(num);
+        if (num == 3) {
+            clearInterval(timer);
+            // 调用next();
+            TimerManager.next();
+        }
+    }, 10);
+}
+
+
+http://blog.csdn.net/u013578101/article/details/45363039用js写出jquery的slideup/slidedown
+
+
+					$(function(){
+					$(".xqi ul li").click(function(){
+					$(this).css("color","#FF4200").siblings().css("color","#474747"); //切换选中的按钮高亮状态
+					var index=$(this).index(); //获取被按下按钮的索引值，需要注意index是从0开始的
+					$(".xqi1").eq(index).show(); //在按钮选中时在下面显示相应的内容，同时隐藏不需要的框架内容
+					});
+					$(".xqi1 ul li").click(function(){
+					$(this).css("color","#FF4200").siblings().css("color","#474747"); //切换选中的按钮高亮状态
+					var index=$(this).index(); //获取被按下按钮的索引值，需要注意index是从0开始的
+					$(".xqi2").eq(index).show(); //在按钮选中时在下面显示相应的内容，同时隐藏不需要的框架内容
+					});
+					});

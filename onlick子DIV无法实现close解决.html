@@ -1,0 +1,15 @@
+情况如下：  
+
+<div class="footfixed" style="cursor:pointer" onclick="toAdvertDetail('${appPath}home/showNewsDetail?newsId=4');" >
+	<div class="close" onClick="event.cancelBubble = true">
+		
+	</div>
+</div>
+<!-- 底部悬浮end -->
+
+
+外层的div有一个点击跳转事件，按钮div也是一个点击事件用来隐藏整个div，产生的问题是，点击了关闭按钮了同事会触发父级div的跳转事件，
+
+
+
+解决方法：在子级div上增加一个事件 onClick="event.cancelBubble = true"，这样就可以只触发自身的点击事件了

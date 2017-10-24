@@ -1,0 +1,19 @@
+<script src="js/jquery-1.6.min.js"></script>
+<script>
+
+$(function(){
+				$("#h1").toggle(function(){
+					$("#h1").css("background-image","url('img/05.jpg')");
+				},function(){
+					$("#h1").css("background-image","url('img/06.jpg')");
+				})
+			}) 
+</script>
+<input type="button" value="huan" id="h1" class="hh1" />
+<style>
+.hh1{
+		background: url("img/05.jpg");
+		width: 120px;
+		height: 90px;
+	}         
+</style>

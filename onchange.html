@@ -1,0 +1,36 @@
+<html>
+<head>
+
+</head>
+
+<body>
+
+
+
+<select name="type" onchange="show_sub(this.options[this.options.selectedIndex].value)">    
+    <option value="0">请选择主类别</option>    
+    <option value="1">1</option>    
+    <option value="2">2</option>    
+ </select>  
+ <script>     
+    function show_sub(v){     
+        alert(v);     
+    }     
+</script>    
+
+
+</body>
+
+</html>
+
+
+select的value决定display:none/block;
+
+
+
+				$("#centertype").change(function(){
+				if($("#centertype").val()=="个人"){
+					$("#cha1").css("display","none");
+				}else{
+					$("#cha1").css("display","block");
+				});

@@ -1,0 +1,53 @@
+<html>  
+<head>  
+</head>  
+<body>  
+<div id="wrap">  
+<input type="checkbox" name="father"  forcheckboxgroup="groupname1"/>  
+  
+<input type="checkbox" name="son" group="groupname1"/>  
+<input type="checkbox" name="son" group="groupname1"/>  
+<input type="checkbox" name="son" group="groupname1"/>    
+</div>  
+<input type="button" value="ok" />  
+<script>  
+function unionCheckbox(){  
+ var fathers = document.getElementsByName("father");  
+ if(fathers == 0)return;  
+ var father = fathers[0];  
+ var sons = document.getElementsByName("son");  
+ if(sons == 0)return;  
+ father.onchange = function(){  
+  var checked = father.checked;  
+  eachSons(function(ckb){  
+   ckb.checked = checked;  
+  })  
+ }  
+  
+ var eachSons = function(fun){  
+   for(var i=0,l=sons.length; i<l; i++){  
+     var ason = sons[i];  
+     fun(ason);  
+   }  
+ }  
+  
+ eachSons(function(ckb){  
+   ckb.onchange = function(){  
+    if(ckb.checked){//任何一个checkbox被选中，父checkbox也选中  
+      if(!father.checked)father.checked = true;  
+    }else{  
+      //如果子checkbox全部取消选择，则父checkbox也取消选择  
+      var qty = 0;  
+      eachSons(function(ckb){  
+        if(ckb.checked == false)qty++;  
+      })  
+      if(qty == sons.length)father.checked = false;  
+    }  
+   }  
+  })  
+}  
+  
+unionCheckbox();  
+</script>  
+</body>  
+</html>  

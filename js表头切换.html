@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	</head>
+	
+	<body>
+		<script>
+				function ChangeColor(a,b,c)
+			{
+				for(i=0;i<=c;i++)
+			{
+				document.getElementById(b+i).style.color="#282828"; 
+				document.getElementById(b+i).style.borderBottom="#282828 1px solid"; 
+			}
+				document.getElementById(b+a).style.color="#FF4200"; 
+				document.getElementById(b+a).style.borderBottom="#FF4200 1px solid"; 
+			}
+		</script>
+		<style>
+			.per_msg{
+				width:700px;height:56px;margin-top:0px;margin-left:0px;border-bottom:1px solid #3C3C3C;background:#FFF;
+			}
+		</style>
+		<div class="per_msg">
+			<span id="ChangeDl_0" onMouseOver="JavaScipt:ChangeColor('0','ChangeDl_',1)" class="per_msg01" onMouseMove="JavaScript:ChangeDv('0','JPDiv_',1)" style="width:104px;height:56px;line-height:56px;text-align:center;font-size:16px;float:left;cursor:pointer;color:#FF4200;border-bottom:1px solid #FF4200;">普通消息</span>
+			<span id="ChangeDl_1" onMouseOver="JavaScipt:ChangeColor('1','ChangeDl_',1)" class="per_msg01" onMouseMove="JavaScript:ChangeDv('1','JPDiv_',1)" style="width:104px;height:56px;line-height:56px;text-align:center;font-size:16px;float:left;cursor:pointer;">订单消息</span>
+			      
+			
+		</div>
+	</body>
+	
+</html>
