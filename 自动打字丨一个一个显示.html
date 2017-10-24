@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>js自动打字-jq22.com</title>
+<script src="js/jquery-1.11.1.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<div id="divId" style="font-size: 100px ;">
+</div>
+
+<script>
+var zi = "这是个神奇的网站！";
+var i = 0;
+var divObj; //全局变量
+function init() {
+    divObj = document.getElementById("divId");
+    setInterval(show, 200); //每个指定的毫秒执行一次函数
+}init();
+
+function show() {
+    i++;
+    var jzi = zi.substring(0, i); //截取字符串，每次截取一个
+    divObj.innerHTML = jzi; //往div设置内容
+    if (i == zi.length) { //当字符串写完后，重新开始执行
+        i = 0;
+    }
+}
+</script>
+
+</body>
+</html>

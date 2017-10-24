@@ -1,0 +1,88 @@
+<script type="text/javascript" >  
+var i=1;  
+
+function cDiv(){  
+var q = document.getElementById('fath').children.length;
+if(q<23){
+var oDiv=document.createElement("div");
+oDiv.class='cp_tit54';
+oDiv.id='div'+i;  
+document.getElementById("fath").appendChild(oDiv); 
+var ainput=document.createElement("input");  
+ainput.type='text';  
+ainput.placeholder='例如：颜色，款式';
+ainput.style.width='120px';  
+ainput.style.height='34px';  
+ainput.style.border='1px solid #BBB';  
+ainput.style.marginRight='5px';  
+ainput.style.marginTop='10px';  
+document.getElementById("div"+i).appendChild(ainput);  
+var binput=document.createElement("input");  
+binput.placeholder='金额';
+binput.style.width='65px';
+binput.style.height='34px';   
+binput.style.border='1px solid #BBB'; 
+binput.style.marginRight='5px';
+binput.style.marginTop='10px';
+document.getElementById("div"+i).appendChild(binput); 
+
+<!-- width:70px;height:25px;margin-top:5px;margin-left:10px;font-size:12px;background:#FF4200;border:none;border-radius:3px;color:#FFF; -->
+
+
+var addinput=document.createElement("input");  
+addinput.type='button';  
+addinput.id='add'+i;  
+addinput.onclick=cDiv;
+addinput.style.width='65px';
+addinput.style.height='25px';
+addinput.style.marginTop='7px';
+addinput.style.marginLeft='10px';
+addinput.style.background='#FF4200';
+addinput.style.border='none';
+addinput.style.borderRadius='3px';
+addinput.style.color='#FFF';
+addinput.value="添加样式"; 
+document.getElementById("fath").appendChild(addinput);  
+var rminput=document.createElement("input");  
+rminput.type='button';  
+rminput.id=''+i;        
+rminput.onclick=removeE;
+rminput.style.width='65px';
+rminput.style.height='25px';
+rminput.style.marginTop='7px';
+rminput.style.marginLeft='10px';
+rminput.style.background='#FF4200';
+rminput.style.border='none';
+rminput.style.borderRadius='3px';
+rminput.style.color='#FFF';
+rminput.value="删除"; 
+document.getElementById("fath").appendChild(rminput);  
+i++;  
+}else{
+	
+}
+}
+function removeE(){  
+    var id=this.id;
+    document.getElementById("fath").removeChild(document.getElementById('div'+id));
+    document.getElementById("fath").removeChild(document.getElementById('add'+id));  
+    document.getElementById("fath").removeChild(document.getElementById(''+id));  
+} 
+</script>  
+<body>  
+	<style>
+		.cp_st1{
+			width:70px;height:25px;margin-top:5px;margin-left:10px;font-size:12px;background:#FF4200;border:none;border-radius:3px;color:#FFF;
+		}
+	</style>
+	<div id="fath">
+		<div class="asdf">
+			<div class="cp_tit54">
+				<input type="text" class="cp_tit52" placeholder="例如：颜色，款式"  name="content" onblur="contentPublishService()" />
+				<input type="text" class="cp_tit53" placeholder="金额" name="price" onblur="pricePublishService()" />元
+			</div>
+		</div> 
+		<input type="button" id="btn" class="cp_st1" onclick="cDiv()" value='添加样式'/>  
+		<input type="button" id="rmbtn" class="cp_st1" onclick="removeE()" value='删除'/>  
+	</div>	
+</body>  

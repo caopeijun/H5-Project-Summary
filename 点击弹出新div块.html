@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>			
+	<meta charset="utf-8" />
+	
+	
+
+</head>
+
+<body>
+	
+	
+	<div id="chongfu">
+		<div id="ass" style="width:200px;height:200px;background:red;border:2px solid #00F;">
+		
+		</div>
+	</div>
+	<div id="xiahua" style="margin-top:20px;"> 
+		<div style="width:200px;height:200px;background:yellow;">
+			可以将 margin-top:20px 放到div里
+		</div>
+	</div>
+	<button onclick="copy()">点击弹出div块</button>
+	<div style="overflow:hidden"></div>
+	<script type="text/javascript">
+		var copyi = 0;
+
+		var chongfu = document.getElementById("chongfu");
+		
+		var ass = document.getElementById("ass");
+		var xiahua = document.getElementById("xiahua");
+		
+		function copy() {
+			copyi++;
+			var ctClone = ass.cloneNode(true);
+			chongfu.appendChild(ctClone);
+			ctClone.style.top = 0 + 200 * copyi + "px";
+			xiahua.style.marginTop = 20 + 0 * copyi + "px";
+			ctClone.setAttribute("id", "b");
+		}
+
+	</script>
+</body>
+
+</html>

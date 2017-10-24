@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>文件名提示</title>
+<script type="text/javascript">
+function c(th){
+    var inf = document.getElementById('s');
+    var fN = '';
+    //判断并获取文件名
+    if(fN = th.value.match(/[^\\\/]+\.[a-zA-Z0-9]+$/)){
+        //如果获取到文件名，则将文件名在后面的span标签中显示出来。
+        //这里你可以自行修改要显示的样式等。
+        inf.innerHTML = "<font color='green'>√ "+fN+"</font>";
+    }else{
+        inf.innerHTML = "<font color='red'>× 获取文件名失败</font>";
+    }
+}
+</script>
+</head>
+ 
+<body>
+<input type="file" onChange="c(this)" /><span id="s"></span>
+</body>
+</html>

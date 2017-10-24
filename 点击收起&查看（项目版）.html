@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	</head>
+	
+	<body>
+	<style>
+		#hidden_enent a{
+			color:#FF4200;text-decoration:none;
+		}
+		#hidden_enent a:hover{
+			color:green;
+		}
+	</style>
+	<script type="text/javascript" src="jquery/jquery.min.js"></script> 
+	<script type="text/javascript">
+	$(function(){
+	$('#click_event').click(function(){
+		if($('#hidden_enent').is(':hidden')){
+		$('#hidden_enent').show();
+		$('#click_event').val('收起');
+		}
+		else{
+		$('#hidden_enent').hide();
+		$('#click_event').val('展开');
+		}
+	})
+	})
+	</script>	
+		<div style="width:660px;">
+			<div id="hidden_enent">
+				<div style="width:660px;line-height:26px;font-size:16px;color:#9A9A9A;">
+					<p>
+						一.想要有公司邀请您参加面试<a href="#">【立即发布简历>】</a><br />
+						二.想要赢取积分快来参加<a href="#">【记忆力挑战大赛】</a><a href="#">【诗词大赛】</a>赢取积分可以去【积分商城】兑换商品或<a href="#">【提现】</a><br />
+						三.也可以转换身份，发布需求变成<a href="#">【雇主】</a>我有能力申请<a href="#">【广告主】</a><a href="#">【服务商】</a><a href="#">【媒体主】</a>
+					</p>
+				</div>
+			</div>
+			<input type="button" id="click_event" style="width:auto;background:#FFF;border:none;color:#FF4200;font-size:16px;margin-top:10px;cursor:pointer;" value="收起"/>
+			
+		</div>
+	</body>
+</html>

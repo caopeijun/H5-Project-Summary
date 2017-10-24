@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=" utf-8">
+<meta name="author" content="http://www.softwhy.com/" />
+<title>蚂蚁部落</title>
+<style type="text/css">
+#hidden_enent{
+  width:200px;
+  height:150px;
+  background:#ccc;
+  text-align:center;
+  line-height:150px;
+}
+</style>
+<script type="text/javascript" src="jquery/jquery.min.js"></script> 
+<script type="text/javascript">
+$(function(){
+  $('#click_event').click(function(){
+    if($('#hidden_enent').is(':hidden')){
+      $('#hidden_enent').show();
+      $('#click_event').val('点击隐藏');
+    }
+    else{
+      $('#hidden_enent').hide();
+      $('#click_event').val('点击显示');
+    }
+  })
+})
+</script>
+</head>
+<body>
+<input type="button" id="click_event" value="点击隐藏"/>
+<div id="hidden_enent">蚂蚁部落欢迎您</div>
+</body>
+</html>

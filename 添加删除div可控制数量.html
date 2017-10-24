@@ -1,0 +1,46 @@
+<script type="text/javascript" >  
+var i=1;  
+
+function cDiv(){  
+var q = document.getElementsByTagName('div').length;
+if(q<8){
+var oDiv=document.createElement("div");  
+oDiv.style.border="1px solid black";  
+oDiv.style.width="200px";  
+oDiv.style.height="30px";  
+oDiv.style.backgroundColor="#E1E1E1";  
+oDiv.id='div'+i;  
+document.body.appendChild(oDiv);  
+var addinput=document.createElement("input");  
+addinput.type='button';  
+addinput.id='add'+i;  
+addinput.onclick=cDiv;  
+addinput.value='create'+i;  
+document.body.appendChild(addinput);  
+var rminput=document.createElement("input");  
+rminput.type='button';  
+rminput.id=''+i;        // 这里为了动态生成和动态删除 上面的元素。  
+rminput.onclick=removeE; // 要直接加 函数名，就算有参数也是如此。   
+rminput.value='remove'+i;  
+document.body.appendChild(rminput);  
+i++;  
+}else{
+	
+}
+}
+function removeE(){  
+    var id=this.id;  // 得到执行函数元素的 id 值。(重要)  
+    alert(id);      // 建议在这里验证一下，也是一个好习惯。成功之后要删掉  
+    document.body.removeChild(document.getElementById('div'+id)); // 拼接 id   
+    document.body.removeChild(document.getElementById('add'+id));  
+    document.body.removeChild(document.getElementById(''+id));  
+}  
+  
+  
+  
+</script>  
+<body>  
+<div class="asdf" style="width:200px;height:30px;border:1px solid #F00;"></div>  
+<input type="button" id="btn" onclick="cDiv()" value='create'/>  
+<input type="button" id="rmbtn" onclick="removeE()" value='remove'/>  
+</body>  

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<script>
+			function div_click(){
+				document.getElementById("dhide").style.height="400px";
+			}
+			function div_click1(){
+				document.getElementById("dhide").style.height="200px";
+			}
+		</script>
+	</head>
+	
+	<body>
+
+		<div id="dhide" style="width:200px;height:200px;margin:0;background:yellow;overflow:hidden;">
+			<div onmouseover="div_click()" onclick="div_click1()" style="width:200px;height:200px;margin:0;background:red;">
+			
+			</div>
+			
+			<div style="width:200px;height:200px;margin:0;background:#00FF00;">
+			
+			</div>
+		
+		
+		
+		</div>
+		<div style="width:200px;height:200px;margin:0;background:blue;">
+		
+		</div>
+
+	</body>
+
+</html>

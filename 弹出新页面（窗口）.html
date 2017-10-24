@@ -1,0 +1,41 @@
+在function里加上
+
+var iWidth = 1000;
+var iHeight = 1000;
+var iTop = (window.screen.availHeight - 30 - iHeight) / 2;
+var iLeft = (window.screen.availWidth - 10 - iWidth) / 2;
+var win = window.open(
+	"用户登录.html",
+	"弹出窗口",
+	"width="
+			+ iWidth
+			+ ", height="
+			+ iHeight
+			+ ",top="
+			+ iTop
+			+ ",left="
+			+ iLeft
+			+ ",toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no,alwaysRaised=yes,depended=yes");
+
+			
+			
+			
+后台根据id弹
+function answerpc(id) {
+	var iWidth = 1000;
+	var iHeight = 1000;
+	var iTop = (window.screen.availHeight - 30 - iHeight) / 2;
+	var iLeft = (window.screen.availWidth - 10 - iWidth) / 2;
+	var win = window.open(
+		"answerpc?id=" + id,
+		"弹出窗口",
+		"width="
+				+ iWidth
+				+ ", height="
+				+ iHeight
+				+ ",top="
+				+ iTop
+				+ ",left="
+				+ iLeft
+				+ ",toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no,alwaysRaised=yes,depended=yes");
+}

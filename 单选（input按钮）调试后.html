@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		*{
+			padding:0;margin:0;
+		}
+		</style>
+	</head>
+	<body>
+		<!-- radio_box input{opacity:0;} -->
+			<style>
+				.radio_box{ display:inline-block; position:relative;}
+
+				.radio_box label{ width:9px; height:9px; position:absolute; top:22px; left:20px; border:2px solid #FF4200; border-radius:50%; background:#fff; cursor:pointer;}
+
+				.radio_box input:checked + label:after{ content:''; width:5px; height:5px; position:absolute; top:2px; left:2px; background:#FF4200; border-radius:50%;}
+
+	       		
+			</style>
+			<div style="width: 1258px;background: #FFF;height: 56px;font-size: 12px;">
+					<span class="radio_box">
+			            <div style="float: left;margin-left: 20px;margin-top: 22px;">	
+			            	<input type="radio" id="radio_1" name="radio" checked />
+			            	<label for="radio_1"></label>
+			            </div>
+			            <div style="width:70px;margin-left: 10px;float: left;margin-top: 19px;">企业服务</div>
+			        </span>
+			        <span class="radio_box">
+			            <div style="float: left;margin-left: 20px;margin-top: 22px;">	
+			            	<input type="radio" id="radio_2" name="radio" />
+			            	<label for="radio_2"></label>
+			            </div>
+			            <div style="width:70px;margin-left: 10px;float: left;margin-top: 19px;">企业服务</div>
+			        </span>
+			</div>
+	</body>
+</html>
