@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/mobiscroll.custom-2.5.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mobiscroll.core-2.5.2-zh.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mobiscroll.datetime-2.5.1-zh.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mobiscroll.custom-2.5.2.min.css"/>
+		<style type="text/css"> 
+			
+		</style>
+		<script type="text/javascript">
+			$(function() {
+				
+				$.getJSON("json/city.json",function(area1){
+					var list1 = "";
+					$.each(area1,function(areaindex,info){
+						list1 = "<li class='treepro'><span>"+info["areaName"]+"</span><ul class='treecity1'></ul></li>"
+						$("#treelist8").append(list1)
+						var list2="";
+						for(i in area1[areaindex].cities){
+							list2 = "<li class='treecity2'>"+area1[areaindex].cities[i].areaName+"</li>"
+							$(".treecity1").eq(areaindex).append(list2);
+						}
+						
+					})
+					
+				})
+				
+				
+				
+				var a = setTimeout(function(){
+					$("#treelist8").css("display","block")
+					$("#treelist8").mobiscroll().treelist({
+					theme: "android-ics light",
+					lang: "zh",
+					defaultValue: [Math.floor($('#treelist8 li').length / 2)],
+					headerText: function(valueText) {
+						return "选择地区";
+					},
+					formatResult: function(num) { //返回自定义格式结果   
+						return $('#treelist8').find('li').eq(num).text();
+					}
+				});
+				},100)
+				
+				
+				
+				
+				
+			})
+		</script>
+	</head>
+
+	<body>
+		
+		
+		<ul id="treelist8" style="display: none;">
+			
+		</ul>
+		
+	</body>
+
+</html>
